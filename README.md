@@ -2,7 +2,7 @@
 
 Simple WhatsApp Bot
 
-[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/LitRHap/wabot)
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/Jack1521/wabot)
 # Join kalo eror/ga paham
 * [`Join sini`](https://chat.whatsapp.com/I4S4QfCet92GueJV5Uq3jT) 
 ## FOR TERMUX/UBUNTU/SSH USER
