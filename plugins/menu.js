@@ -25,19 +25,7 @@ let tags = {
 const defaultMenu = {
 	
   before: `
-╔════「 *👒 𝐉 𝐀 𝐂 𝐊 𝐁☠𝐓©* 」
-║  Yohoho❗, %name!
-║
-║ *Total cmds:* 121
-║ *Prefix:* Global
-║ *Owner:* %me
-║
-║ *Date:* %week, %date
-║ *Time:* %time
-║
-║ *Database:* %rtotalreg of %totalreg
-║ *Github:* https://youtu.be/qc1D2a233oU
-╚═════
+HELLO THERE MY COMMANDS
 %readmore`.trimStart(),
   header: '╭─「 %category 」',
   body: '🦄 %cmd',
