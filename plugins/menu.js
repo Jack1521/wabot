@@ -1,60 +1,47 @@
 let fs = require('fs')
 let path = require('path')
-let fetch = require('node-fetch')
 let levelling = require('../lib/levelling')
-const thumb = fs.readFileSync('./src/thumb.jpeg')
 let tags = {
-  'main': '🄼🄰🄸🄽',
-  'game': '🄶🄰🄼🄴',
-  'xp': '🄴🅇🄿 & 🄻🄸🄼🄸🅃',
-  'sticker': '🅂🅃🄸🄲🄺🄴🅁',
-  'kerang': '🄺🄴🅁🄰🄽🄶 🄰🄹🄰🄸🄱',
-  'quotes': '🅀🅄🄾🅃🄴🅂',
-  'admin': '🄰🄳🄼🄸🄽',
-  'group': '🄶🅁🄾🅄🄿',
-  'premium': '🄿🅁🄴🄼🄸🅄🄼',
-  'internet': '🄸🄽🅃🄴🅁🄽🄴🅃',
-  'anonymous': '🄰🄽🄾🄽🅈🄼🄾🅄🅂 🄲🄷🄰🅃',
-  'nulis': '🄼🄰🄶🄴🅁 🄽🅄🄻🄸🅂 & 🄻🄾🄶🄾',
-  'downloader': '🄳🄾🅆🄽🄻🄾🄰🄳🄴🅁',
-  'tools': '🅃🄾🄾🄻🅂',
-  'fun': '🄵🅄🄽',
-  'database': '🄳🄰🅃🄰🄱🄰🅂🄴',
-  'vote': '🅅🄾🅃🄸🄽🄶',
-  'absen': '🄰🄱🅂🄴🄽',
-  'quran': '🄰🄻 🅀🅄🅁 🄰🄽',
-  'jadibot': '🄹🄰🄳🄸 🄱🄾🅃',
-  'owner': '🄾🅆🄽🄴🅁',
-  'host': '🄷🄾🅂🅃',
-  'advanced': '🄰🄳🅅🄰🄽🄲🄴',
-  'info': '🄸🄽🄵🄾',
-  '': '🄽🄾 🄲🄰🅃🄴🄶🄾🅁🅈',
+  'main': '𝙈𝘼𝙄𝙉🎾',
+  'game': '𝙂𝘼𝙈𝙀🎲',
+  'xp': '𝙓𝙋 & 𝙇𝙄𝙈𝙄𝙏+',
+  'sticker': '𝙎𝙏𝙄𝘾𝙆𝙀𝙍😜',
+  'admin': '𝘼𝘿𝙈𝙄𝙉 𝙎𝙀𝘾𝙏𝙄𝙊𝙉',
+  'group': '𝙂𝙍𝙊𝙐𝙋 𝙈𝙀𝙉𝙐',
+  'internet': '𝙄𝙉𝙏𝙀𝙍𝙉𝙀𝙏🌐',
+  'downloader': '𝘿𝙊𝙒𝙉𝙇𝙊𝘼𝘿 𝙈𝙀𝙉𝙐⬇️',
+  'tools': '𝙏𝙊𝙊𝙇𝙎🛠️',
+  'database': '𝘿𝘼𝙏𝘼𝘽𝘼𝙎𝙀',
+  'vote': '𝙑𝙊𝙏𝙀🗳️',
+  'owner': '𝙊𝙒𝙉𝙀𝙍 𝙎𝙀𝘾𝙏𝙄𝙊𝙉',
+  'host': '𝙃𝙊𝙎𝙏🌱',
+  'info': '𝘽𝙊𝙏 𝙄𝙉𝙁𝙊🤖',
+  'maker': '𝙈𝘼𝙆𝙀𝙍🧙‍♂️',
+  'audio': '𝘼𝙐𝘿𝙄𝙊🔊',
+  'exp': '𝙀𝙓𝙋➕',
+  
+  
 }
 const defaultMenu = {
+	
   before: `
-╭─『 %me 』
-│ Hai, %name!
-│
-│ Tersisa *%limit Limit*
-│ Role *%role*
-│ Level *%level (%exp / %maxexp)* [%xp4levelup lagi untuk levelup]
-│ %totalexp XP in Total
-│ 
-│ Tanggal: *%week %weton, %date*
-│ Tanggal Islam: *%dateIslamic*
-│ Waktu: *%time*
-│
-│ Uptime: *%uptime (%muptime)*
-│ Database: %rtotalreg of %totalreg
-│ Github :
-│ https://github.com/LitRHap/wabot
-│ Instagram :
-│ https://instagram.com/loli._.school
-╰────
+╔════「 *👒 𝐉 𝐀 𝐂 𝐊 𝐁☠𝐓©* 」
+║  Yohoho❗, %name!
+║
+║ *Total cmds:* 121
+║ *Prefix:* Global
+║ *Owner:* %me
+║
+║ *Date:* %week, %date
+║ *Time:* %time
+║
+║ *Database:* %rtotalreg of %totalreg
+║ *Github:* https://youtu.be/qc1D2a233oU
+╚═════
 %readmore`.trimStart(),
-  header: '┏┉┄┈┈┈『%category』┈┈┈┈┈┉┓',
-  body: '┆➜ %cmd %islimit %isPremium',
-  footer: '└┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈\n',
+  header: '╭─「 %category 」',
+  body: '🦄 %cmd',
+  footer: '╰────\n',
   after: `
 *%npmname@^%version*
 ${'```%npmdesc```'}
@@ -63,7 +50,7 @@ ${'```%npmdesc```'}
 let handler = async (m, { conn, usedPrefix: _p }) => {
   try {
     let package = JSON.parse(await fs.promises.readFile(path.join(__dirname, '../package.json')).catch(_ => '{}'))
-    let { exp, limit, level, role } = global.db.data.users[m.sender]
+    let { exp, limit, level } = global.db.data.users[m.sender]
     let { min, xp, max } = levelling.xpRange(level, global.multiplier)
     let name = conn.getName(m.sender)
     let d = new Date(new Date + 3600000)
@@ -85,7 +72,9 @@ let handler = async (m, { conn, usedPrefix: _p }) => {
       year: 'numeric'
     }).format(d)
     let time = d.toLocaleTimeString(locale, {
-      hour12: false
+      hour: 'numeric',
+      minute: 'numeric',
+      second: 'numeric'
     })
     let _uptime = process.uptime() * 1000
     let _muptime
@@ -106,7 +95,6 @@ let handler = async (m, { conn, usedPrefix: _p }) => {
         tags: Array.isArray(plugin.tags) ? plugin.tags : [plugin.tags],
         prefix: 'customPrefix' in plugin,
         limit: plugin.limit,
-        premium: plugin.premium,
         enabled: !plugin.disabled,
       }
     })
@@ -128,7 +116,7 @@ let handler = async (m, { conn, usedPrefix: _p }) => {
             return menu.help.map(help => {
               return body.replace(/%cmd/g, menu.prefix ? help : '%p' + help)
                 .replace(/%islimit/g, menu.limit ? '(Limit)' : '')
-                .replace(/%isPremium/g, menu.premium ? '(Premium)' : '')
+                .replace(/%isPremium/g, menu.limit ? '(Premium)' : '')
                 .trim()
             }).join('\n')
           }),
@@ -150,35 +138,17 @@ let handler = async (m, { conn, usedPrefix: _p }) => {
       totalexp: exp,
       xp4levelup: max - exp,
       github: package.homepage ? package.homepage.url || package.homepage : '[unknown github url]',
-      level, limit, name, weton, week, date, dateIslamic, time, totalreg, rtotalreg, role,
+      level, limit, name, weton, week, date, dateIslamic, time, totalreg, rtotalreg,
       readmore: readMore
     }
     text = text.replace(new RegExp(`%(${Object.keys(replace).sort((a, b) => b.length - a.length).join`|`})`, 'g'), (_, name) => '' + replace[name])
-    //Iya bang sy nub
-    const reply = {
-    key: {
-        participant: '0@s.whatsapp.net'
-    },
-    message: {
-        orderMessage: {
-            itemCount: 1122334455,
-            itemCoun: 404,
-            surface: 404,
-            message: `© ${conn.user.name}`,
-            orderTitle: 'B',
-            thumbnail: thumb,
-            sellerJid: '0@s.whatsapp.net'
-        }
-    }
-}
-let fkon = { key: { fromMe: false, participant: `0@s.whatsapp.net`, ...(m.chat ? { remoteJid: '16504228206@s.whatsapp.net' } : {}) }, message: { contactMessage: { displayName: `Relldev`, vcard: `BEGIN:VCARD\nVERSION:3.0\nN:;a,;;;\nFN: Rlxfly UwU\nitem1.TEL;waid=6283820073017:6283820073017\nitem1.X-ABLabel:Ponsel\nEND:VCARD`}}}
-conn.send3ButtonImg(m.chat, thumb, `Hi! Im ${conn.user.name}\n\nHere my menu...`, text.trim(), 'ping', '.ping', 'owner', '-owner', 'donasi', '.donasi', reply)
+    conn.reply(m.chat, text.trim(), m)
   } catch (e) {
-    conn.reply(m.chat, 'Maaf, menu sedang error', m)
+    conn.reply(m.chat, 'Sorry, the menu is in error', m)
     throw e
   }
 }
-handler.help = ['menu', 'help', '?']
+handler.help = ['menu', 'help']
 handler.tags = ['main']
 handler.command = /^(menu|help|\?)$/i
 handler.owner = false
@@ -192,7 +162,6 @@ handler.botAdmin = false
 
 handler.fail = null
 handler.exp = 3
-
 
 module.exports = handler
 
