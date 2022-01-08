@@ -25,21 +25,21 @@ let tags = {
 const defaultMenu = {
 	
   before: `
-👋 (❤ω❤) Ohayō %name
+Ohayou 🤗, %name!
 
-*Support us by following us on instagram:*
-https://instagram.com/ruha.haze?utm_medium=copy_link
-        
-*Donate via paypal:*
-https://www.paypal.me/devilictears
-    
-*Hentai are FILTERED but now you can enable it*
-    
-*Read FAQ for rules*
-    
-My name is (secret) ❤❤
-    
-My prefix is *-*
+*Star my repo in github* 🌻
+https://github.com/Jack1521
+
+*My whatsapp* 🌟
+https://wa.me/989035024059
+
+*_DON'T PM OR CALL THE BOT_* 💢
+
+*NO SPAMMING* ❤
+
+Bot prefix (global) 💫
+
+ᎬᏁjᎾᎽ🍨
 %readmore`.trimStart(),
   header: '╭─「 %category 」',
   body: '🦄 %cmd',
