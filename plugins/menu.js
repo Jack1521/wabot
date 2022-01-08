@@ -26,7 +26,8 @@ const defaultMenu = {
 	
   before: `
 HELLO THERE MY COMMANDS
-%readmore`.trimStart(),
+
+
   header: '╭─「 %category 」',
   body: '🦄 %cmd',
   footer: '╰────\n',
