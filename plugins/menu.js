@@ -25,9 +25,22 @@ let tags = {
 const defaultMenu = {
 	
   before: `
-HELLO THERE MY COMMANDS
+👋 (❤ω❤) Ohayō %name
 
-
+*Support us by following us on instagram:*
+https://instagram.com/ruha.haze?utm_medium=copy_link
+        
+*Donate via paypal:*
+https://www.paypal.me/devilictears
+    
+*Hentai are FILTERED but now you can enable it*
+    
+*Read FAQ for rules*
+    
+My name is (secret) ❤❤
+    
+My prefix is *-*
+%readmore`.trimStart(),
   header: '╭─「 %category 」',
   body: '🦄 %cmd',
   footer: '╰────\n',
